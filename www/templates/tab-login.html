@@ -1,0 +1,46 @@
+<ion-view view-title="Login">
+  <ion-content class="padding">
+  <!-- class="padding"  style="background: pink; center; background-size: cover;">  -->
+    	<!-- <button class="button button-block button-positive" ng-click="authenticate()">con Twitter</button> -->
+
+    	<div style="padding: 20px; margin-top: 25px;"> 
+	        <form role="form" name="quenda_login" method="post" target="my_iframe">
+	          <!--<div class="list" style="text-align: center;">
+	              <ion-md-input placeholder="Usuario" highlight-color="balanced" type="text" name="user"></ion-md-input>
+	             	<ion-md-input placeholder="Contrase&ntilde;a" highlight-color="energized" type="password" name="pass"></ion-md-input> -->      
+     
+      			<div class="form-group">
+
+
+				    <div class="input-group">
+				      <span class="input-group-addon logIconBtn">
+				        <span class='glyphicon glyphicon-bookmark'></span>
+				      </span>
+				      <input type="text" class="form-control logButton" name="user" placeholder=" Tarjeta sanitaria" ng-model="user" required="required" ng-trim="false" size="40" value="910812IRGO0017">
+				    </div>
+ 
+					<br/>
+
+					<div class="input-group">
+				      <span class="input-group-addon logIconBtn">
+				        <span class='glyphicon glyphicon-user'></span>
+				      </span>
+				      <input type="text" class="form-control logButton" name="pass" placeholder=" DNI" ng-model="pass" required="required" ng-trim="false" size="40" value="45823656C">
+				    </div>
+
+	          		<br/>
+
+	       			<div class="padding">
+	              		<button type="button" class="btn button button-full button-positive accessButton" ng-click="loginAction(quenda_login)" size="40">
+	              			Entrar 
+	              		</button>
+	            	</div>
+
+	            </div>
+	          
+	        </form>
+        </div>
+    
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,55 @@
+<ion-view view-title="Hospital">
+  <ion-content>
+
+    
+   <!--- <ion-list>
+      <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate item-avatar item-icon-right" href="#/tab/hospital/{{doc.idQuote}}">
+            <h2>{{doc.hospital}}</h2>
+            <p>{{doc.service}}</p>
+            <p>{{doc.date}}</p>
+            <p>{{doc.hour}}</p>
+        </ion-item>
+    </ion-list>
+
+     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list> -->
+
+
+    <div class="row-fluid col-xs-12 quotesTitle">
+      <h3 class="">Hoy</h3>
+    </div>
+
+    <div class="row-fluid col-xs-12 quotesEP">
+      <h5 id="nameUser" class=""><span class='glyphicon glyphicon-user'></span></h5>
+    </div>
+
+    <div class="row-fluid col-xs-12">     
+    
+        <p ng-show="!docs.length">
+          No se han encontrado citas para hoy
+        </p>
+        <ion-list>
+             <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate row-fluid" href="#/tab/hospital/{{doc.idQuote}}">
+                <h2><span class='glyphicon glyphicon-home resColor'></span>  {{doc.hospital}}</h2>
+                <p>  {{doc.service}}</p>
+                <p><span class='glyphicon glyphicon-time resColor'></span>  {{doc.date}} - {{doc.hour}}</p>
+                <button type="button" class="btn button button-full button-positive" ng-click="agg({{doc.idQuote}})" size="40">
+                      Notificar llegada 
+                    </button>
+            </ion-item>
+        </ion-list>
+      
+    </div>
+
+  </ion-content>
+</ion-view>
