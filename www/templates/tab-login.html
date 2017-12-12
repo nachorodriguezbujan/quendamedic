@@ -1,22 +1,23 @@
-<ion-view view-title="Login">
+<ion-view view-title="Login" align-title="center">
   <ion-content class="padding">
-  <!-- class="padding"  style="background: pink; center; background-size: cover;">  -->
-    	<!-- <button class="button button-block button-positive" ng-click="authenticate()">con Twitter</button> -->
 
-    	<div style="padding: 20px; margin-top: 25px;"> 
+    	<div style="padding: 20px; margin-top: 25px;" ng-show="login_form"> 
+	        
+	        <div class="hero no-header flat">
+                <div class="content">
+                    <div class="app-icon"></div>
+                </div>
+            </div>
+
 	        <form role="form" name="quenda_login" method="post" target="my_iframe">
-	          <!--<div class="list" style="text-align: center;">
-	              <ion-md-input placeholder="Usuario" highlight-color="balanced" type="text" name="user"></ion-md-input>
-	             	<ion-md-input placeholder="Contrase&ntilde;a" highlight-color="energized" type="password" name="pass"></ion-md-input> -->      
      
       			<div class="form-group">
-
 
 				    <div class="input-group">
 				      <span class="input-group-addon logIconBtn">
 				        <span class='glyphicon glyphicon-bookmark'></span>
 				      </span>
-				      <input type="text" class="form-control logButton" name="user" placeholder=" Tarjeta sanitaria" ng-model="user" required="required" ng-trim="false" size="40" value="910812IRGO0017">
+				      <input type="text" class="form-control logButton" name="user" placeholder=" Tarjeta sanitaria" ng-model="user" required="required" ng-trim="false" size="40">
 				    </div>
  
 					<br/>
@@ -25,7 +26,7 @@
 				      <span class="input-group-addon logIconBtn">
 				        <span class='glyphicon glyphicon-user'></span>
 				      </span>
-				      <input type="text" class="form-control logButton" name="pass" placeholder=" DNI" ng-model="pass" required="required" ng-trim="false" size="40" value="45823656C">
+				      <input type="text" class="form-control logButton" name="pass" placeholder=" DNI" ng-model="pass" required="required" ng-trim="false" size="40">
 				    </div>
 
 	          		<br/>
@@ -40,7 +41,8 @@
 	          
 	        </form>
         </div>
-    
+    	
+    	<div ng-show="validate_msg"><h3 class="msg_wait"><i class="ion-loop"></i> &nbsp;Validando Datos...</h3></div>
 
   </ion-content>
 </ion-view>

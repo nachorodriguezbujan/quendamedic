@@ -1,8 +1,59 @@
-<ion-view view-title="Hospital">
+<ion-view view-title="Hospital" align-title="center">
+  
+  <ion-nav-buttons side="left">
+        <button class="button icon ion-navicon" ng-click="toggleLeft()"></button>
+  </ion-nav-buttons>
+  
   <ion-content>
 
+    <div class="row-fluid col-xs-12 quotesTitle">
+      <h3 class="">Hoy</h3>
+    </div>
+
+    <div class="row-fluid col-xs-12 quotesEP">
+      <h5 id="nameUserHospital"><span class='glyphicon glyphicon-user'></span></h5>
+    </div>
+
+    <div class="row-fluid col-xs-12">     
     
-   <!--- <ion-list>
+      <div ng-show="!docs.length" class="row-fluid col-xs-12">
+          <h3><span class='glyphicon '></span> No se han encontrado citas para hoy </h3>
+      </div>
+      <div class="panel-group" id="accordion">
+        <ion-list>
+          <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate row-fluid">
+
+            <!-- construye el panel desplegable -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#/tab/hospital#collapse{{doc.idQuote}}">
+                    <h2 class="wrapText"><span class='resColor glyphicon glyphicon-home'></span> {{doc.hospital}}</h2>
+                    <p class="wrapText">  {{doc.service}}</p>
+                    <p class="wrapText"><span class='glyphicon glyphicon-time resColor'></span>  {{doc.date}} - {{doc.hour}}</p>
+                  </a>
+                </div>
+              </div>
+              <div id="collapse{{doc.idQuote}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <button type="button" class="btn button button-full button-positive accessButton" ng-click="notifyArrival({{doc.idQuote}})" size="40">
+                      notificar llegada 
+                  </button>
+                </div>
+              </div>
+            </div> 
+
+          </ion-item>
+        </ion-list>
+      </div><!-- cierra panel-group-->
+      
+    </div>
+
+  </ion-content>
+</ion-view>
+
+
+ <!--- <ion-list>
       <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate item-avatar item-icon-right" href="#/tab/hospital/{{doc.idQuote}}">
             <h2>{{doc.hospital}}</h2>
             <p>{{doc.service}}</p>
@@ -21,35 +72,9 @@
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete
         </ion-option-button>
+
+
+        href="#/tab/hospital/{{doc.idQuote}}"
+
       </ion-item>
     </ion-list> -->
-
-
-    <div class="row-fluid col-xs-12 quotesTitle">
-      <h3 class="">Hoy</h3>
-    </div>
-
-    <div class="row-fluid col-xs-12 quotesEP">
-      <h5 id="nameUser" class=""><span class='glyphicon glyphicon-user'></span></h5>
-    </div>
-
-    <div class="row-fluid col-xs-12">     
-    
-        <p ng-show="!docs.length">
-          No se han encontrado citas para hoy
-        </p>
-        <ion-list>
-             <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate row-fluid" href="#/tab/hospital/{{doc.idQuote}}">
-                <h2><span class='glyphicon glyphicon-home resColor'></span>  {{doc.hospital}}</h2>
-                <p>  {{doc.service}}</p>
-                <p><span class='glyphicon glyphicon-time resColor'></span>  {{doc.date}} - {{doc.hour}}</p>
-                <button type="button" class="btn button button-full button-positive" ng-click="agg({{doc.idQuote}})" size="40">
-                      Notificar llegada 
-                    </button>
-            </ion-item>
-        </ion-list>
-      
-    </div>
-
-  </ion-content>
-</ion-view>

@@ -1,0 +1,47 @@
+<ion-view view-title="Datos personales" align-title="center">
+  
+  <ion-nav-buttons side="left">
+        <button class="button icon ion-navicon" ng-click="toggleLeft()"></button>
+  </ion-nav-buttons>
+  
+  <ion-content>
+
+    <div class="row-fluid col-xs-12 quotesTitle">
+      <h5><span class='glyphicon glyphicon-user'></span> {{user.name}} </h5>
+    </div>
+
+    <div class="row-fluid col-xs-12">
+
+      <ion-list>
+        <ion-item type="item-text-wrap" class="item-remove-animate row-fluid">
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-dashboard'></span><b> NHC: </b> {{user.nhc}}</p>
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-bookmark'></span><b> Tarjeta Sanitaria: </b> {{user.cardID}}</p>
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-user'></span><b> DNI: </b> {{user.dni}}</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item type="item-text-wrap" class="item-remove-animate row-fluid">
+          
+          <p class="wrapText"><span class='resColor fa fa-stethoscope' aria-hidden="true"></span> <b>Dirección:</b> {{user.address}} || <b>CP:</b> {{user.cp}} </p>
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-home'></span> <b>Población:</b> {{user.city}}</p>
+          <p class="wrapText"><span class='resColor fa fa-birthday-cake' aria-hidden="true"></span> <b>Fecha de nacimiento:</b> {{user.dateBirth}} || <span class='resColor fa fa-dot-circle-o' aria-hidden="true"></span>{{user.years}} años</p>
+          <p class="wrapText"><span class='resColor fa fa-users' aria-hidden="true"></span>  {{user.relatives}}</p>
+
+        </ion-item>
+
+        <ion-item type="item-text-wrap " class="item-remove-animate row-fluid item-divider">
+
+          <p ng-show="user.showMedicines" class="wrapText"><span class='resColor glyphicon glyphicon-pushpin'></span><b> Medicamentos: </b> {{user.medicines}}</p>
+        
+          <p ng-show=user.showTreatments class="wrapText"><span class='resColor glyphicon glyphicon-warning-sign'></span><b> Tratamientos: </b> {{user.treatments}}</p>
+
+          <p ng-show="user.showAnnotations" class="wrapText"><span class='resColor fa fa-comment' aria-hidden="true"></span><b> Anotaciones: </b> {{user.annotations}}</p>
+
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+  </ion-content>
+</ion-view>

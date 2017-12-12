@@ -6,14 +6,6 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
-// var nameApp = angular.module('starter', ['ionic', 'uiGmapgoogle-maps'])
-
-
-/*angular.module('myApp', ['pushNotify']).*/
-  /*.run(function (pushNotification) {
-    //register device on load
-    pushNotification.registerPush();
-  })*/
 
 
 .run(function($ionicPlatform, $cordovaPush, $rootScope) {
@@ -30,66 +22,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
 
-    //pushNotification.registerPush();
-
-    /*var push = new Ionic.Push({
-      "debug": true
-    });
-
-    push.register(function(token) {
-      console.log("Device token:",token.token);
-    });*/
-
-    /*var androidConfig = {
-      "senderID": "723460958494"
-    };
-
-    //document.addEventListener("deviceready", function(){
-    $cordovaPush.register(androidConfig).then(function(result) {
-      // Success
-      alert("kokahj");
-    }, function(err) {
-      // Error
-    });
-
-    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
-      switch(notification.event) {
-        case 'registered':
-          if (notification.regid.length > 0 ) {
-            alert('registration ID = ' + notification.regid);
-          }
-          break;
-
-        case 'message':
-          // this is the actual push notification. its format depends on the data model from the push server
-          alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
-          break;
-
-        case 'error':
-          alert('GCM error = ' + notification.msg);
-          break;
-
-        default:
-          alert('An unknown GCM event has occurred');
-          break;
-      }
-    });
-
-
-      // WARNING: dangerous to unregister (results in loss of tokenID)
-      $cordovaPush.unregister(options).then(function(result) {
-        // Success!
-      }, function(err) {
-        // Error
-      });
-
-//    }, false);*/
-
-
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider ,$ionicConfigProvider) {
+
+  //allow to put the navbar in the bottom and center  
+  $ionicConfigProvider.tabs.position("bottom");
+  $ionicConfigProvider.navBar.alignTitle("center");
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -108,6 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   //TAB LOGIN
   .state('tab.login', {
+      cache: false,
       url: '/login',
       views: {
         'tab-login': {
@@ -117,8 +58,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
+  //TAB DATOS PERSONALES
+  .state('tab.userData', {
+      cache: false,
+      url: '/userData',
+      views: {
+        'tab-userData': {
+          templateUrl: 'templates/tab-userData.html',
+          controller: 'UserDataCtrl'
+        }
+      }
+    })
+
   //TAB HOME
   .state('tab.home', {
+    cache: false,
     url: '/home',
     views: {
       'tab-home': {
@@ -131,6 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   //TAB HOME QUOTE DETAIL
   .state('tab.homeQuote', {
+      cache: false,
       url: '/home/:quoteId',
       views: {
         'tab-home': {
@@ -142,6 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   //TAB HOSPITAL
   .state('tab.hospital', {
+      cache: false,
       url: '/hospital',
       views: {
         'tab-hospital': {
@@ -151,19 +107,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
-  //TAB HOSPITAL QUOTE DETAIL
-  .state('tab.HospitalQuote', {
-      url: '/hospital/:quoteId',
-      views: {
-        'tab-hospital': {
-          templateUrl: 'templates/tab-hospital-quote.html',
-          controller: 'HospitalQuoteDetailCtrl'
-        }
-      }
-    })
-
   //TAB LOCATION
   .state('tab.account', {
+    cache: false,
     url: '/account',
     views: {
       'tab-account': {
@@ -172,6 +118,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   });
+
+  
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/login');

@@ -49,6 +49,21 @@ h1 {
     color: #F45 !important;
 }
 
+.dataQuotes1{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.dataQuotes2{
+    border-bottom: 1px solid black;
+}
+
+.wrapText{
+    white-space: normal !important;
+    max-width: none !important;
+    width: 100%;
+}
+
 .title-bordered {
     border-top: solid 2px #bbb;
     padding-top: 30px;
@@ -103,30 +118,25 @@ p {
 
 /* Login
 ==================================*/
-.app-icon {
-    background-color: #fff;
-    background: url('../img/cofares.png') center;
-    background-size: cover;
-    /*border-radius: 50%;*/
-    height: 125px;
-    margin: 0 auto;
-    width: 125px;
-}
 
 .bar .button, .bar .button.button-flat, .bar .button.button-large, .button, .button.button-flat, .button.button-large {
     box-shadow: none;
 }
 
 .hero.no-header {
-    height: 232px;
+    height: 150px;
 }
 
-.title-cofares .title{ padding-left: 27px; font-size: 20px; }
-.title-cofares .title:before{
-    position: absolute;
-    margin: 6px 0px 0px -40px;
-    content: url('../img/cofares-title.png');
+.app-icon {
+    background-color: #fff;
+    background: url('../img/logoLogin.png') center;
+    background-size: cover;
+    /*border-radius: 50%;*/
+    height: 85px;
+    margin: 0 auto;
+    width: 200px;
 }
+
 .msg_wait{
     position: absolute;
     left: 50%;
@@ -137,8 +147,7 @@ p {
     width: 100%;
 }
 
-/* nuevo maps
-*/
+/* nuevo maps */
 
 #map {
     width: 100%;

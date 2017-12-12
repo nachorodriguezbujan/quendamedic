@@ -1,4 +1,8 @@
-<ion-view view-title="Home">
+<ion-view view-title="Home" align-title="center">
+   <ion-nav-buttons side="left">
+        <button class="button icon ion-navicon" ng-click="toggleLeft()"></button>
+    </ion-nav-buttons>
+
   <ion-content>
   
     <div class="row-fluid col-xs-12 quotesTitle">
@@ -6,19 +10,19 @@
     </div>
 
     <div class="row-fluid col-xs-12 quotesEP">
-      <h5 id="nameUser" class=""><span class='glyphicon glyphicon-user'></span></h5>
+      <h5 id="nameUser"><span class='glyphicon glyphicon-user'></span></h5>
     </div>
 
-    <div class="row-fluid col-xs-12">     
+    <div class="row-fluid col-xs-12"> 
     
-        <p ng-show="!docs.length">
-          No existen próximas citas
-        </p>
+        <h3 ng-show="!docs.length" style="padding-top: 30px;">
+            No existen próximas citas
+        </h3>
         <ion-list>
-             <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate row-fluid" href="#/tab/home/{{doc.idQuote}}">
-                <h2><span class='glyphicon glyphicon-home resColor'></span>  {{doc.hospital}}</h2>
-                <p>  {{doc.service}}</p>
-                <p><span class='glyphicon glyphicon-time resColor'></span>  {{doc.date}} - {{doc.hour}}</p>
+             <ion-item ng-repeat="doc in docs" ng-if="docs.length" type="item-text-wrap" class="item-remove-animate row-fluid" href="#/tab/home/{{doc.idQuote}}">                
+                <h2 class="wrapText"><span class='resColor glyphicon glyphicon-home'></span> {{doc.hospital}}</h2>
+                <p class="wrapText">  {{doc.service}}</p>
+                <p class="wrapText"><span class='resColor glyphicon glyphicon-time'></span>  {{doc.date}} - {{doc.hour}}</p>
             </ion-item>
         </ion-list>
       

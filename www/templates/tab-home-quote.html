@@ -1,43 +1,38 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="Detalles de su cita">
-  <ion-content class="padding">
-   <!-- <img ng-src="{{chat.face}}" style="width: 64px; height: 64px"> -->
-    <p ng-value = "{{quote.hospital}}">
-      Hospital: {{quote.hospital}}
-    </p>
+<ion-view view-title="Citas" align-title="center">
+  <ion-content>
+    <div class="row-fluid col-xs-12 quotesTitle">
+      <h3 class="">Detalles de la cita</h3>
+    </div>
 
-    <p> Servicio: 
-      {{quote.service}}
-    </p>
-    <p> Fecha;
-      {{quote.date}}
-    </p>
-    <p> Hora: 
-      {{quote.hour}}
-    </p>
+    <div class="row-fluid col-xs-12 quotesEP">
+      <h5 id="nameUserDetail"><span class='glyphicon glyphicon-user'></span></h5>
+    </div>
 
-    <p> Doctor:
-      {{quote.doctor}}
-    </p>
-    <p> Planta:
+    <div class="row-fluid col-xs-12">
 
-      {{quote.floor}}
-    </p>
-    <p> Seccion:
-      {{quote.section}}
-    </p>
-    <p> Observaciones
-      {{quote.observations}}
-    </p>
+      <ion-list>
+        <ion-item type="item-text-wrap" class="item-remove-animate row-fluid">
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-home'></span> {{quote.hospital}}</p>
+          <p class="wrapText"> {{quote.service}}</p>
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-time'></span> {{quote.date}} - {{quote.hour}}</p>
+        </ion-item>
+      </ion-list>
 
-    
-    <p > {{quote.ingress}}</p>
-    
+      <ion-list>
+        <ion-item type="item-text-wrap" class="item-remove-animate row-fluid">
+          <p class="wrapText"><span class='resColor fa fa-stethoscope' aria-hidden="true"></span><b> Médico: </b> {{quote.doctor}}</p>
+          <p class="wrapText"><span class='resColor glyphicon glyphicon-send'></span>  Planta {{quote.floor}} | Sección: {{quote.section}}</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item type="item-text-wrap" class="item-remove-animate row-fluid">
+          <p class="wrapText"><span class='resColor fa fa-comment' aria-hidden="true"></span>  {{quote.observations}}</p>
+          <p class="wrapText"> {{quote.ingress}}</p>
+        </ion-item>
+      </ion-list>
+
+    </div>
 
   </ion-content>
 </ion-view>

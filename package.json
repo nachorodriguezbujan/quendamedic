@@ -1,7 +1,7 @@
 {
-  "name": "appday2",
+  "name": "project",
   "version": "1.1.1",
-  "description": "appDay2: An Ionic project",
+  "description": "project: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
